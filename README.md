@@ -1,155 +1,151 @@
-<div align="center">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&amp;family=Space+Mono&amp;display=swap');
 
-<img src="banner.svg" alt="Nicolás Ramírez — Full-stack Developer" width="100%"/>
+      .bg { fill: #000000; }
+      .title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 42px;
+        fill: #ffffff;
+      }
+      .subtitle {
+        font-family: 'Space Mono', monospace;
+        font-size: 14px;
+        fill: #888888;
+      }
+      .accent-dot {
+        fill: #ff2d00;
+        animation: pulse 2.5s ease-in-out infinite;
+      }
+      .line {
+        stroke: #ff2d00;
+        stroke-width: 1.5;
+        animation: draw 2s ease-out forwards;
+        stroke-dasharray: 200;
+        stroke-dashoffset: 200;
+      }
+      .grid-line {
+        stroke: #111111;
+        stroke-width: 0.5;
+      }
+      .tag {
+        font-family: 'Space Mono', monospace;
+        font-size: 11px;
+        fill: #444444;
+      }
+      .tag-active {
+        font-family: 'Space Mono', monospace;
+        font-size: 11px;
+        fill: #ff2d00;
+      }
+      .version {
+        font-family: 'Space Mono', monospace;
+        font-size: 10px;
+        fill: #333333;
+      }
+      .nr-box {
+        fill: none;
+        stroke: #222222;
+        stroke-width: 1;
+      }
+      .nr-text {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 22px;
+        fill: #ffffff;
+      }
 
-<br/>
+      /* Scan line effect */
+      .scanline {
+        fill: rgba(255, 45, 0, 0.03);
+        animation: scan 4s linear infinite;
+      }
 
-[![Portfolio](https://img.shields.io/badge/nicolas--ramirez.dev-000000?style=flat-square&logo=vercel&logoColor=white)](https://nicolas-ramirez.dev)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-000000?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nicolas-francisco-ram%C3%ADrez-sandoval/)
-[![Email](https://img.shields.io/badge/n2.9ramirez@gmail.com-000000?style=flat-square&logo=gmail&logoColor=white)](mailto:n2.9ramirez@gmail.com)
+      @keyframes pulse {
+        0%, 100% { opacity: 1; r: 5; }
+        50% { opacity: 0.4; r: 3; }
+      }
+      @keyframes draw {
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes scan {
+        0% { transform: translateY(-220px); }
+        100% { transform: translateY(220px); }
+      }
 
-</div>
+      /* Fade in for text elements */
+      .fade-in {
+        opacity: 0;
+        animation: fadeIn 1s ease-out forwards;
+      }
+      .fade-in-delay-1 { animation-delay: 0.3s; }
+      .fade-in-delay-2 { animation-delay: 0.6s; }
+      .fade-in-delay-3 { animation-delay: 0.9s; }
 
-<br/>
+      @keyframes fadeIn {
+        to { opacity: 1; }
+      }
 
-```
- → building production systems with typescript, react, next.js and postgresql
- → focused on maintainability over cleverness, security by default
- → founder of nfr innovaciones web spa · ing. civil informática @ upla
-```
+      /* Blinking cursor */
+      .cursor {
+        fill: #ff2d00;
+        animation: blink 1s step-end infinite;
+      }
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+    </style>
+  </defs>
 
----
+  <!-- Background -->
+  <rect class="bg" width="900" height="220" rx="6"/>
 
-### `// what i'm building`
+  <!-- Subtle grid -->
+  <line class="grid-line" x1="0" y1="55" x2="900" y2="55"/>
+  <line class="grid-line" x1="0" y1="110" x2="900" y2="110"/>
+  <line class="grid-line" x1="0" y1="165" x2="900" y2="165"/>
+  <line class="grid-line" x1="60" y1="0" x2="60" y2="220"/>
+  <line class="grid-line" x1="840" y1="0" x2="840" y2="220"/>
 
-<table>
-<tr>
-<td width="50%">
+  <!-- Scan line -->
+  <rect class="scanline" x="0" y="0" width="900" height="4"/>
 
-**[EMIT](https://emitr.cl)** `pre-launch`
-<br/>
-Shopify → SII automation for Chilean merchants.
-Auto-generates boletas, facturas & notas de crédito per sale.
-<br/><br/>
-`Next.js 15` `Drizzle` `Neon` `Clerk` `Stripe` `pg-boss`
+  <!-- NR mark -->
+  <rect class="nr-box" x="20" y="20" width="28" height="28" rx="2"/>
+  <text class="nr-text" x="23" y="42">NR</text>
+  <circle class="accent-dot" cx="50" cy="22" r="3"/>
 
-</td>
-<td width="50%">
+  <!-- Version tag top right -->
+  <text class="version" x="830" y="35" text-anchor="end">v2026.04</text>
 
-**CECOM** `production`
-<br/>
-Multi-tenant operational management for mining & industrial sites.
-Real-time emergency dispatch, shift handover with digital signatures.
-<br/><br/>
-`React 18` `Socket.io` `Express` `PostgreSQL` `AWS`
+  <!-- Main title -->
+  <text class="title fade-in" x="80" y="95">Nicolás Ramírez</text>
+  <rect class="cursor" x="455" y="68" width="2" height="32" rx="1"/>
 
-</td>
-</tr>
-<tr>
-<td width="50%">
+  <!-- Red accent line -->
+  <line class="line" x1="80" y1="110" x2="280" y2="110"/>
 
-**Auditly** `in development`
-<br/>
-Digital checklists & audit SaaS for LatAm SMBs.
-Template builder, inspection flows, compliance scoring.
-<br/><br/>
-`Next.js 15` `Prisma` `Neon` `Clerk` `shadcn/ui`
+  <!-- Subtitle -->
+  <text class="subtitle fade-in fade-in-delay-1" x="80" y="138">full-stack developer · typescript · next.js · postgresql</text>
 
-</td>
-<td width="50%">
+  <!-- Tags bottom -->
+  <text class="tag fade-in fade-in-delay-2" x="80" y="185">valparaíso, chile</text>
+  <text class="tag" x="250" y="185">·</text>
+  <text class="tag-active fade-in fade-in-delay-2" x="270" y="185">open to opportunities</text>
+  <text class="tag" x="460" y="185">·</text>
+  <text class="tag fade-in fade-in-delay-3" x="480" y="185">nfr innovaciones web spa</text>
 
-**SINTRA** `shipped`
-<br/>
-Firefighter management platform.
-Migrated from monolith to multi-tenant architecture.
-<br/><br/>
-`React 19` `Express` `MySQL` `Prisma`
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-**[CONAF Dashboard](https://conaf-dashboard.vercel.app)** `deployed`
-<br/>
-Emergency operations center for forest fire dispatch.
-Map-centric layout with real-time KPIs.
-<br/><br/>
-`React` `Vite` `Leaflet` `Vercel`
-
-</td>
-<td width="50%">
-
-**[nicolas-ramirez.dev](https://nicolas-ramirez.dev)** `live`
-<br/>
-Personal portfolio. Nothing-inspired design,
-bilingual EN/ES, JSON-LD SEO.
-<br/><br/>
-`Next.js 15` `Tailwind` `Vercel`
-
-</td>
-</tr>
-</table>
-
----
-
-### `// stack`
-
-<div align="center">
-
-![TypeScript](https://img.shields.io/badge/TypeScript-000000?style=for-the-badge&logo=typescript&logoColor=3178C6)
-![React](https://img.shields.io/badge/React-000000?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-000000?style=for-the-badge&logo=node.js&logoColor=5FA04E)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-000000?style=for-the-badge&logo=postgresql&logoColor=4169E1)
-![Prisma](https://img.shields.io/badge/Prisma-000000?style=for-the-badge&logo=prisma&logoColor=white)
-![Tailwind](https://img.shields.io/badge/Tailwind-000000?style=for-the-badge&logo=tailwindcss&logoColor=06B6D4)
-![Docker](https://img.shields.io/badge/Docker-000000?style=for-the-badge&logo=docker&logoColor=2496ED)
-![AWS](https://img.shields.io/badge/AWS-000000?style=for-the-badge&logo=amazonwebservices&logoColor=FF9900)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-000000?style=for-the-badge&logo=redis&logoColor=FF4438)
-![Socket.io](https://img.shields.io/badge/Socket.io-000000?style=for-the-badge&logo=socket.io&logoColor=white)
-
-</div>
-
----
-
-### `// stats`
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=nicolasov2&show_icons=true&include_all_commits=true&count_private=true&bg_color=000000&title_color=ff2d00&text_color=888888&icon_color=ff2d00&border_color=222222&hide_border=false&ring_color=ff2d00" />
-  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=nicolasov2&show_icons=true&include_all_commits=true&count_private=true&bg_color=ffffff&title_color=ff2d00&text_color=333333&icon_color=ff2d00&border_color=e0e0e0&hide_border=false" />
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=nicolasov2&show_icons=true&include_all_commits=true&count_private=true&bg_color=000000&title_color=ff2d00&text_color=888888&icon_color=ff2d00&border_color=222222" />
-</picture>
-&nbsp;&nbsp;
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=nicolasov2&background=000000&ring=ff2d00&fire=ff2d00&currStreakLabel=ff2d00&sideLabels=888888&sideNums=ffffff&currStreakNum=ffffff&dates=444444&border=222222" />
-  <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com?user=nicolasov2&background=ffffff&ring=ff2d00&fire=ff2d00&currStreakLabel=ff2d00&sideLabels=333333&sideNums=000000&currStreakNum=000000&dates=888888&border=e0e0e0" />
-  <img height="170" src="https://streak-stats.demolab.com?user=nicolasov2&background=000000&ring=ff2d00&fire=ff2d00&currStreakLabel=ff2d00&sideLabels=888888&sideNums=ffffff&currStreakNum=ffffff&dates=444444&border=222222" />
-</picture>
-
-</div>
-
-<br/>
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=nicolasov2&layout=compact&bg_color=000000&title_color=ff2d00&text_color=888888&border_color=222222&langs_count=8" />
-  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=nicolasov2&layout=compact&bg_color=ffffff&title_color=ff2d00&text_color=333333&border_color=e0e0e0&langs_count=8" />
-  <img height="150" src="https://github-readme-stats.vercel.app/api/top-langs/?username=nicolasov2&layout=compact&bg_color=000000&title_color=ff2d00&text_color=888888&border_color=222222&langs_count=8" />
-</picture>
-
-</div>
-
----
-
-<div align="center">
-
-```
- nicolás ramírez · valparaíso, chile · 2026
-```
-
-</div>
+  <!-- Decorative dots bottom right -->
+  <circle cx="810" cy="180" r="1.5" fill="#222222"/>
+  <circle cx="820" cy="180" r="1.5" fill="#222222"/>
+  <circle cx="830" cy="180" r="1.5" fill="#ff2d00" opacity="0.6"/>
+  <circle cx="810" cy="190" r="1.5" fill="#222222"/>
+  <circle cx="820" cy="190" r="1.5" fill="#ff2d00" opacity="0.4"/>
+  <circle cx="830" cy="190" r="1.5" fill="#222222"/>
+  <circle cx="810" cy="200" r="1.5" fill="#ff2d00" opacity="0.8"/>
+  <circle cx="820" cy="200" r="1.5" fill="#222222"/>
+  <circle cx="830" cy="200" r="1.5" fill="#222222"/>
+</svg>
